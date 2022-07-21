@@ -159,5 +159,11 @@ export class SidebarComponent implements OnInit, OnDestroy {
       this.renderer.addClass(this.document.body, "submenu-closed");
     }
   }
-
+  logout() {
+    this.authService.logout().subscribe((res) => {
+      if (!res.success) {
+        this.router.navigate(["/authentication/signin"]);
+      }
+    });
+  }
 }
