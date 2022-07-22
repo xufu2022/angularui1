@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterLink, RouterModule, Routes } from '@angular/router';
 import { Page404Component } from './authentication/page404/page404.component';
 import { AuthLayoutComponent } from './layout/app-layout/auth-layout/auth-layout.component';
+import { Role } from './core/models/role';
 
 const routes: Routes = [
   {
@@ -15,7 +16,11 @@ const routes: Routes = [
       },
       {
         path:'admin',
-        component:AdminComponent
+        data: {
+          role: Role.Admin,
+        },
+        loadChildren: () =>
+          import("./admin/admin.module").then((m) => m.AdminModule),
       }
     ]
   },

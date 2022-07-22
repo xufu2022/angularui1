@@ -16,7 +16,7 @@ import { MatButtonModule } from "@angular/material/button";
 @NgModule({
   declarations: [
     //Page500Component,
-    Page404Component,
+    //Page404Component,
     SigninComponent,
     // SignupComponent,
     // LockedComponent,
